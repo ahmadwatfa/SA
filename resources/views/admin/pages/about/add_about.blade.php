@@ -12,209 +12,227 @@
 
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title"> اضافة نبذة <small>جديد</small> </h3>
-                        <i class="pull-left header fa fa-th"></i>
+                      <h3 class="box-title"> اضافة نبذة <small>جديدة</small> </h3>
+                      <i class="pull-left header fa fa-th"></i>
                     </div><!-- /.box-header -->
+    
+                    
+                    <form role="form" id="signupForm1" action="{{route('aboutus.store')}}" onsubmit="return check()" method="post" class="form-horizontal" enctype="multipart/form-data">
+                      @csrf
 
-                    <form role="form" id="signupForm1" action="{{ route('aboutus.store') }}" onsubmit="return check()"
-                        method="post" class="form-horizontal" enctype="multipart/form-data">
-                        @csrf
                         <div class="box-body col-md-12">
-
-                            <div class="col-md-12">
-                                <!-- Custom Tabs (Pulled to the right) -->
-                                <div class="nav-tabs-custom">
-
-                                    <ul class="nav nav-tabs pull-right">
-                                        <li class="active"><a href="#tab_1-1" data-toggle="tab">بيانات عامة</a></li>
-                                        
-
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div class="tab-pane active fade in" id="tab_1-1">
-                                            <div class="row">
-                                                <div class="col-md-8">
-
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالعربية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">النبذة بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">النبذة بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>                     <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>                     <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>                     <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>                     <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>                     <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="col-sm-3 control-label">العنوان بالانجليزية :</label>
-                                                            <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name') }}" placeholder=""
-                                                                    data-fv-field="">
-                                                                @error('name')
-                                                                    <p class="text-danger">{{ $message }}</p>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4">
-
-                                                    <div class="file-upload">
-                                                        <button class="file-upload-btn" type="button"
-                                                            onclick="$('.file-upload-input').trigger( 'click' )">إضافة
-                                                            صورة</button>
-
-                                                        <div class="image-upload-wrap">
-                                                            <input class="file-upload-input" type='file' name="image"
-                                                                onchange="readURL(this);" accept="image/*" />
-                                                            @error('image')
-                                                                <p class="text-danger">{{ $message }}</p>
-                                                            @enderror
-                                                            <div class="drag-text">
-                                                                <h3>إضافة صورة </h3>
-                                                            </div>
-                                                        </div>
-                                                        <div class="file-upload-content">
-                                                            <img class="file-upload-image" src="#" alt="your image" />
-                                                            <div class="image-title-wrap">
-                                                                <button style="font-weight: bold;" class="btn btn-danger"
-                                                                    type="button" onclick="removeUpload()"
-                                                                    class="remove-image">حذف <span
-                                                                        class="image-title"></span></button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- /.tab-pane -->
-                                        
-                                    </div><!-- /.tab-content -->
-                                </div><!-- nav-tabs-custom -->
+                      
+                      <div class="col-md-12">
+                  <!-- Custom Tabs (Pulled to the right) -->
+                  <div class="nav-tabs-custom">
+                   
+                    <ul class="nav nav-tabs pull-right">
+                      <li class="active"><a href="#tab_1-1" data-toggle="tab">النبذة بالعربية</a></li>
+                      <li><a href="#tab_2-2" data-toggle="tab">النبذة بالانجليزية </a></li>
+                      
+    
+                    </ul>
+                    <div class="tab-content">
+                      <div class="tab-pane active fade in" id="tab_1-1">
+                        <div class="row">
+                        <div class="col-md-8">
+    
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">العنوان  :</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control" name="title_ar" placeholder="" data-fv-field="">
+                              </div>
                             </div>
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            <!-- .box-footer -->
-                            <button type="submit" class="btn  btn-primary">تخزين</button>
-                            <button type="reset" class="btn  btn-default">تفريغ الحقول</button>
-                        </div><!-- /.box-footer -->
+    
+                          </div>
+    
+    
+                        
+    
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">النبذة  :</label>
+                              <div class="col-sm-9">
+                                <input type="text"  class="form-control" name="description_ar" placeholder="" data-fv-field="">
+                              </div>
+                            </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">النقطة الأولى  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="f_point_ar" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">التفاصيل  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="desc_f_point_ar" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">النقطة الثانية  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="s_point_ar" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">التفاصيل  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="desc_s_point_ar" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">النقطة الثالثة  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text"  class="form-control" name="th_point_ar" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">التفاصيل  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="desc_th_point_ar" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+    
+                        </div>
+    
+                        <div class="col-md-4">
+    
+                          <div class="file-upload">
+                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">إضافة صورة</button>
+    
+                            <div class="image-upload-wrap">
+                              <input class="file-upload-input" type='file' name="image" onchange="readURL(this);" accept="image/*" />
+                              <div class="drag-text">
+                                <h3>إضافة صورة </h3>
+                              </div>
+                            </div>
+                            <div class="file-upload-content">
+                              <img class="file-upload-image" src="#" alt="your image" />
+                              <div class="image-title-wrap">
+                                <button style="font-weight: bold;" class="btn btn-danger" type="button" onclick="removeUpload()" class="remove-image">حذف <span class="image-title"></span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      </div><!-- /.tab-pane -->
+                      <div class="tab-pane active fade in" id="tab_2-2">
+                        <div class="row">
+                        <div class="col-md-8">
+    
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">العنوان  :</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control" name="title_en" placeholder="" data-fv-field="">
+                              </div>
+                            </div>
+    
+                          </div>
+    
+    
+                        
+    
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">النبذة  :</label>
+                              <div class="col-sm-9">
+                                <input type="text"  class="form-control" name="description_en" placeholder="" data-fv-field="">
+                              </div>
+                            </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">النقطة الأولى  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" id="pro_name"  class="form-control" name="f_point_en" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">التفاصيل  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="desc_f_point_en" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">النقطة الثانية  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="s_point_en" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">التفاصيل  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="desc_s_point_en" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">النقطة الثالثة  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="th_point_en" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">التفاصيل  :</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="desc_th_point_en" placeholder="" data-fv-field="">
+                                </div>
+                              </div>
+    
+                          </div>
+    
+                        </div>
+    
+                        </div>
+                      </div><!-- /.tab-pane -->
+                    </div><!-- /.tab-content -->
+                  </div><!-- nav-tabs-custom -->
+                </div>
+                  </div><!-- /.box-body -->
+                      <div class="box-footer"><!-- .box-footer -->
+                        <button type="submit" class="btn  btn-primary">تخزين</button>
+                        <button type="reset"  class="btn  btn-default">تفريغ الحقول</button>
+                      </div><!-- /.box-footer -->
                     </form>
                     <!-- form end -->
-                </div><!-- /.box -->
+                  </div><!-- /.box -->
 
 
             </div> <!-- /.row -->

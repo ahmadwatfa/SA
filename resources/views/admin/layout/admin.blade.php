@@ -117,8 +117,8 @@
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> قائمة النبذ </a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> إضافة نبذة جديدة</a></li>
+                    <li><a href="{{route('aboutus.index')}}"><i class="fa fa-circle-o"></i> قائمة النبذ </a></li>
+                    <li><a href="{{route('aboutus.create')}}"><i class="fa fa-circle-o"></i> إضافة نبذة جديدة</a></li>
                 </ul>
             </li>
 

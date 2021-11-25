@@ -50,8 +50,9 @@
                                                
                                                 <tr>
                                                     <th>رقم </th>
-                                                    
                                                     <th>النبذة</th>
+                                                    <th>الصورة</th>
+                                                    <th>المستخدم</th>
                                                     <th>العمليات</th>
                                                 </tr>
                                             </thead>
@@ -65,13 +66,15 @@
                                                 <tr>
                                                     
                                                     <td>{{$i++}}</td>
-                                                
-                                                    <td>{!! \Illuminate\Support\Str::limit($about->description ,  50 , '...') !!}</td>
+                                                    
+                                                    <td>{!! \Illuminate\Support\Str::limit($about->description_ar ,  50 , '...') !!}</td>
+                                                    <td><img src="{{ asset('storage/' . $about->image) }}" width="200px" height="200px"></td>
+                                                    <td align="center" >{{$about->user}}</td>
                                                  
                                                     <td width="20%" align="center">
-                                                        <a href="{{route('about.show' , $about->id )}}" class="btn btn-xs {{$about->is_publish ?  "btn-default" : "btn-warning"}}">{{$about->is_publish ? "عدم نشر" : "نشر"}}</a>
+                                                        <a href="{{route('aboutus.show' , $about->id )}}" class="btn btn-xs {{$about->is_publish ?  "btn-default" : "btn-warning"}}">{{$about->is_publish ? "عدم نشر" : "نشر"}}</a>
                                                         
-                                                        <a href="{{route('about.edit' , $about->id )}}" class="btn btn-primary btn-xs">تعديل</a>
+                                                        <a href="{{route('aboutus.edit' , $about->id )}}" class="btn btn-primary btn-xs">تعديل</a>
 
                                                         {{-- <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
                                                         data-id="{{ $about->id }}" data-toggle="modal"
@@ -110,7 +113,7 @@
                     <h6 class="modal-title">حذف النبذة</h6><button aria-label="Close" class="close" data-dismiss="modal"
                                                                    type="button"><span aria-hidden="true">&times;</span></button>
                 </div>
-                <form action="/admin/about/{about}" method="post">
+                <form action="/admin/aboutus/{aboutu}" method="post">
                     @csrf
                     @method('delete')
                   

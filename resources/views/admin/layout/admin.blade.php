@@ -136,6 +136,17 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-laptop"></i>
+                    <span>خدماتنا  </span>
+                    <i class="fa fa-angle-left pull-left"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('services.index')}}"><i class="fa fa-circle-o"></i> قائمة الخدمات </a></li>
+                    <li><a href="{{route('services.create')}}"><i class="fa fa-circle-o"></i> إضافة خدمة جديد</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
                     <span>الباقات</span>
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
@@ -167,7 +178,18 @@
                 </ul>
             </li> 
 
-           
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>المدونة</span>
+                    <i class="fa fa-angle-left pull-left"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href=""><i class="fa fa-circle-o"></i> قائمة التدوينات </a></li>
+                    <li><a href=""><i class="fa fa-circle-o"></i> إضافة تدوينة جديدة</a></li>
+                </ul>
+            </li> 
+
             {{-- if($this->session->userdata('role')==1){ --}}
             
                 

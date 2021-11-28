@@ -27,7 +27,7 @@
                   <div class="nav-tabs-custom">
                    
                     <ul class="nav nav-tabs pull-right">
-                      <li class="active"><a href="#tab_1-1" data-toggle="tab">النبذة بالعربية</a></li>
+                      <li class="active"><a href="#tab_1-1" data-toggle="tab" active>النبذة بالعربية</a></li>
                       <li><a href="#tab_2-2" data-toggle="tab">النبذة بالانجليزية </a></li>
                       
     

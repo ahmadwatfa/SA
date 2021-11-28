@@ -10,7 +10,7 @@
 
             <ol class="breadcrumb">
                 <li><a href="admin"><i class="fa fa-home"></i> الرئيسية</a></li>
-                <li class="active">قائمة الشركاء</li>
+                <li class="active">قائمة الفيديوهات</li>
             </ol>
         </section>
 
@@ -22,9 +22,9 @@
 
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة الشركاء </h3>
+                            <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة الفيديوهات </h3>
                             <a href="{{ route('video.create') }}" class="btn btn-primary pull-left">
-                                <i class="fa fa-plus"></i> إضافة شريك جديد </a>
+                                <i class="fa fa-plus"></i> إضافة فيديو جديد </a>
 
                         </div><!-- /.box-header -->
                         <div class="box-body">
@@ -50,8 +50,9 @@
 
                                     <tr>
                                         <th>رقم </th>
-                                        <th>اسم الشريك</th>
-                                        <th>صورة الشريك</th>
+
+                                        <th>اسم الفيديو</th>
+                                        <th>الفيديو</th>
 
                                         <th>العمليات</th>
                                     </tr>
@@ -60,78 +61,82 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                  
+                                    @foreach ($videos as $v)
                                         <tr>
 
+
+
                                             <td>{{ $i++ }}</td>
-                                            <td></td>
-                                            <td><img src="{{ asset('storage/') }}" width="300"></td>
+
+                                            <td>{{ $v->name }}</td>
+                                            <td><img src="{{ asset('storage/' . $v->video) }}" width="300"></td>
                                             <td width="20%" align="center">
-                                                
-                                                <a href="" title="تعديل" type="button" class="btn btn-primary btn-xs">
-                                                                          <span class=" glyphicon glyphicon-edit" aria-hidden="true">
-                                                                          </span>
-                                                  تعديل
+
+                                                <a href="{{ route('video.edit', $v->id) }}" title="تعديل" type="button"
+                                                    class="btn btn-primary btn-xs">
+                                                    <span class=" glyphicon glyphicon-edit" aria-hidden="true">
+                                                    </span>
+                                                    تعديل
                                                 </a>
-                      
-                                                <button  data-effect="effect-scale"
-                                                data-id="" data-toggle="modal"
-                                                href="#modaldemo9" title="حذف" type="button"
-                                                class="btn btn-danger btn-xs delete">
-                                                <span class=" glyphicon glyphicon-trash" aria-hidden="true">
-                                                </span>
-                                                حذف
-                                            </button> 
+
+                                                <button data-effect="effect-scale" data-id="{{$v->id}}" data-toggle="modal"
+                                                    href="#modaldemo9" title="حذف" type="button"
+                                                    class="btn btn-danger btn-xs delete">
+                                                    <span class=" glyphicon glyphicon-trash" aria-hidden="true">
+                                                    </span>
+                                                    حذف
+                                                </button>
 
 
 
-                                    </td>
-                                </tr>
-                               
-                  
+                                            </td>
+                                    @endforeach
+                                    </tr>
 
 
 
-                </tbody>
 
-                </table>
-            </div><!-- /.box-body -->
-        </div><!-- /.box -->
-    </div><!-- /.col -->
-</div><!-- /.row -->
-</section><!-- /.content -->
-<div class="modal" id="modaldemo9">
-<div class="modal-dialog modal-dialog-centered" role="document">
-<div class="modal-content modal-content-demo">
-    <div class="modal-header">
-        <h6 class="modal-title">حذف الشريك</h6><button aria-label="Close" class="close" data-dismiss="modal"
-                                                       type="button"><span aria-hidden="true">&times;</span></button>
-    </div>
-    <form action="/admin/partner/{partner}" method="post">
-        @csrf
-        @method('delete')
-      
-        <div class="modal-body">
-            <p>هل انت متاكد من عملية الحذف ؟</p><br>
-            <input type="hidden" name="id" id="id" value="">
-            {{-- <input class="form-control" name="section_name" id="section_name" type="text" readonly> --}}
+
+                                </tbody>
+
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </section><!-- /.content -->
+        <div class="modal" id="modaldemo9">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modal-content-demo">
+                    <div class="modal-header">
+                        <h6 class="modal-title">حذف الفيديو</h6><button aria-label="Close" class="close"
+                            data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <form action="/admin/video/{video}" method="post">
+                        @csrf
+                        @method('delete')
+
+                        <div class="modal-body">
+                            <p>هل انت متاكد من عملية الحذف ؟</p><br>
+                            <input type="hidden" name="id" id="id" value="">
+                            {{-- <input class="form-control" name="section_name" id="section_name" type="text" readonly> --}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
+                            <button type="submit" class="btn btn-danger">تاكيد</button>
+                        </div>
+                </div>
+                </form>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
-            <button type="submit" class="btn btn-danger">تاكيد</button>
-        </div>
-</div>
-</form>
-</div>
-</div>
-</div><!-- /.content-wrapper -->
-<script>
-$('#modaldemo9').on('show.bs.modal', function(event) {
-var button = $(event.relatedTarget)
-var id = button.data('id')
-var modal = $(this)
-modal.find('.modal-body #id').val(id);
+    </div><!-- /.content-wrapper -->
+    <script>
+        $('#modaldemo9').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('id')
+            var modal = $(this)
+            modal.find('.modal-body #id').val(id);
 
-})
-</script>
+        })
+    </script>
 @endsection

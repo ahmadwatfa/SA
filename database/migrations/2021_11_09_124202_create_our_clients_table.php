@@ -15,6 +15,7 @@ class CreateOurClientsTable extends Migration
     {
         Schema::create('our_clients', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->timestamps();
         });
     }

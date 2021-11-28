@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Video;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
@@ -15,7 +16,11 @@ class VideoController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.video.video_table');
+        $videos = Video::get();
+       
+        return view('admin.pages.video.video_table', [
+            'videos' => $videos,
+        ]);
     }
 
     /**
@@ -62,7 +67,7 @@ class VideoController extends Controller
 
         return redirect()
         ->route('video.index')
-        ->with('success', " تم اضافة الشريك بنجاح");
+        ->with('success', " تم اضافة الفيديو بنجاح");
     }
 
     /**
@@ -82,9 +87,12 @@ class VideoController extends Controller
      * @param  \App\Models\admin\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function edit(Video $video)
+    public function edit($id)
     {
-        //
+        $videos = Video::findOrFail($id);
+        return view('admin.pages.video.edit_video',[
+            'videos' => $videos
+        ]);
     }
 
     /**
@@ -94,9 +102,30 @@ class VideoController extends Controller
      * @param  \App\Models\admin\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Video $video)
+    public function update(Request $request, $id)
     {
-        //
+        $work = Video::findOrFail($id);
+        
+        $video = $work->video;
+        
+        if ($request->hasFile('image'))
+        {
+            $image = $request->file('image')->store('video' , 'public');
+            $data = array_merge($request->all() , ['video'=> $video]);
+            $work->update($data);
+            
+        }
+        
+        $dat = array_merge($request->all() , ['video'=> $video]);
+        $work->update($dat);
+        
+        
+       
+        
+
+        return redirect()
+        ->route('video.index')
+        ->with('success', "تم تعديل الفيديو بنجاح");
     }
 
     /**
@@ -105,8 +134,14 @@ class VideoController extends Controller
      * @param  \App\Models\admin\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Video $video)
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->id;
+        $video = Video::findOrFail($id);
+        $video->delete();
+
+        return redirect()
+        ->route('video.index')
+        ->with('delete', " تم حذف الفيديو بنجاح");
     }
 }

@@ -10,7 +10,7 @@
 
             <ol class="breadcrumb">
                 <li><a href="admin"><i class="fa fa-home"></i> الرئيسية</a></li>
-                <li class="active">قائمة الخطط الاستراتيجية</li>
+                <li class="active">قائمة الاعمال</li>
             </ol>
         </section>
 
@@ -22,9 +22,9 @@
 
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة الخطط الاستراتيجية </h3>
-                            <a href="{{ route('plane.create') }}" class="btn btn-primary pull-left">
-                                <i class="fa fa-plus"></i> إضافة خطة جديدة </a>
+                            <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة الاعمال </h3>
+                            <a href="{{ route('our-works.create') }}" class="btn btn-primary pull-left">
+                                <i class="fa fa-plus"></i> إضافة عمل جديد </a>
 
                         </div><!-- /.box-header -->
                         <div class="box-body">
@@ -50,8 +50,9 @@
 
                                     <tr>
                                         <th>رقم </th>
-                                        <th>الخطة</th>
-                                       
+                                        <th>اسم العمل</th>
+                                        <th>صورة العمل</th>
+
                                         <th>العمليات</th>
                                     </tr>
                                 </thead>
@@ -59,22 +60,22 @@
                                     @php
                                         $i = 1;
                                     @endphp
-                                    @foreach ($plane as $plan)
+                                    @foreach ($works as $work)
                                         <tr>
 
                                             <td>{{ $i++ }}</td>
-                                            <td>{!! \Illuminate\Support\Str::limit($plan->plane ,  50 , '...') !!}</td>
-                                           
+                                            <td>{!! $work->name !!}</td>
+                                            <td><img src="{{ asset('storage/' . $work->image) }}" width="300"></td>
                                             <td width="20%" align="center">
-
-                                                <a href="{{ route('plane.edit' , $plan->id) }}" title="تعديل" type="button" class="btn btn-primary btn-xs">
+                                                
+                                                <a href="{{ route('our-works.edit' , $work->id) }}" title="تعديل" type="button" class="btn btn-primary btn-xs">
                                                                           <span class=" glyphicon glyphicon-edit" aria-hidden="true">
                                                                           </span>
                                                   تعديل
                                                 </a>
                       
                                                 <button  data-effect="effect-scale"
-                                                data-id="{{ $plan->id }}" data-toggle="modal"
+                                                data-id="{{ $work->id }}" data-toggle="modal"
                                                 href="#modaldemo9" title="حذف" type="button"
                                                 class="btn btn-danger btn-xs delete">
                                                 <span class=" glyphicon glyphicon-trash" aria-hidden="true">
@@ -103,10 +104,10 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content modal-content-demo">
     <div class="modal-header">
-        <h6 class="modal-title">حذف الخطة</h6><button aria-label="Close" class="close" data-dismiss="modal"
+        <h6 class="modal-title">حذف العمل</h6><button aria-label="Close" class="close" data-dismiss="modal"
                                                        type="button"><span aria-hidden="true">&times;</span></button>
     </div>
-    <form action="/admin/plane/{plane}" method="post">
+    <form action="/admin/our-works/{our_work}" method="post">
         @csrf
         @method('delete')
       

@@ -127,15 +127,18 @@ class AboutUsController extends Controller
         $about = AboutUs::findOrFail($id);
         $about->is_publish = 1;
         //Save Image
+       
         if ($request->hasFile('image'))
         {
-            $image = $request->file('image')->store('aboutus' , 'public');
+            $about->image = $request->file('image')->store('aboutus' , 'public');
         }
-        $data = array_merge($request->all() , ['image'=> $image] , ['user' => $user]);
+        
+       
         //Update Data
         
-        $about->update($data);
+        $about->update();
         
+
         
         return redirect(route('aboutus.index'))->with('update' , 'تم تعديل النبذة بنجاح');
     }

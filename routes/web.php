@@ -25,4 +25,6 @@ Auth::routes();
 
 route::resource('admin/video' , App\Http\Controllers\admin\VideoController::class);
 route::resource('admin/aboutus' , App\Http\Controllers\admin\AboutUsController::class);
+route::resource('admin/our-works' , App\Http\Controllers\admin\OurWorkController::class);
+route::resource('admin/services' , App\Http\Controllers\admin\OurServicesController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

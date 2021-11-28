@@ -15,6 +15,9 @@ class CreateOurWorksTable extends Migration
     {
         Schema::create('our_works', function (Blueprint $table) {
             $table->id();
+            $table->string('name_ar');
+            $table->string('name_en');
+            $table->string('image');
             $table->timestamps();
         });
     }

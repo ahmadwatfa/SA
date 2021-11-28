@@ -12,11 +12,11 @@
 
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title"> تعديل فيديو  </h3>
+                        <h3 class="box-title"> تعديل عمل  </h3>
                         <i class="pull-left header fa fa-th"></i>
                     </div><!-- /.box-header -->
 
-                    <form role="form" id="signupForm1" action="{{ route('video.update' , $videos->id) }}" onsubmit="return check()"
+                    <form role="form" id="signupForm1" action="{{ route('our-works.update' , $work->id) }}" onsubmit="return check()"
                         method="post" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         @method('put')
@@ -31,29 +31,27 @@
                                         
 
                                     </ul>
-                                    
                                     <div class="tab-content">
-                                        
                                         <div class="tab-pane active fade in" id="tab_1-1">
                                             <div class="row">
                                                 <div class="col-md-8">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="col-sm-3 control-label">اسم الفيديو :</label>
+                                                            <label class="col-sm-3 control-label">اسم العمل :</label>
                                                             <div class="col-sm-9">
                                                                 <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name' , $videos->name) }}" placeholder=""
+                                                                    value="{{ old('name' , $work->name) }}" placeholder=""
                                                                     data-fv-field="">
                                                                 @error('name')
                                                                     <p class="text-danger">{{ $message }}</p>
                                                                 @enderror
                                                             </div>
                                                         </div>
-            
+
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="col-sm-3 control-label">الفيديو :</label>
+                                                            <label class="col-sm-3 control-label">صورة العمل :</label>
                                                             <div class="col-sm-9">
                                                         <div class="file-upload">
                                                             <button class="file-upload-btn" type="button"
@@ -63,12 +61,12 @@
                                                             <div class="image-upload-wrap">
                                                                 <input class="file-upload-input" type='file' name="image"
                                                                     onchange="readURL(this);" accept="image/*" />
-                                                                    @if($videos->video)<img src="{{ asset('storage/' . $videos->video) }}" width="100%">@endif
+                                                                    @if($work->image)<img src="{{ asset('storage/' . $work->image) }}" width="100%">@endif
                                                                     @error('image')
                                                                     <p class="text-danger">{{ $message }}</p>
                                                                 @enderror
                                                                 <div class="drag-text">
-                                                                    <h3>إضافة فيديو </h3>
+                                                                    <h3>إضافة صورة للعمل </h3>
                                                                 </div>
                                                             </div>
                                                             <div class="file-upload-content">

@@ -64,8 +64,8 @@
                                         <tr>
 
                                             <td>{{ $i++ }}</td>
-                                            <td>{!! $work->name !!}</td>
-                                            <td><img src="{{ asset('storage/' . $work->image) }}" width="300"></td>
+                                            <td>{!! $work->name_ar !!}</td>
+                                            <td><img src="{{ asset('storage/' . $work->image) }}" width="200" height="200"></td>
                                             <td width="20%" align="center">
                                                 
                                                 <a href="{{ route('our-works.edit' , $work->id) }}" title="تعديل" type="button" class="btn btn-primary btn-xs">

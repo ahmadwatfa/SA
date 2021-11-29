@@ -1,0 +1,10 @@
+.page-item:last-child .page-link,
+.page-item:first-child .page-link
+{
+  border-radius: 50% !important;
+}
+.accordion-button::after
+{
+  margin-right: auto;
+  margin-left: 0;
+}

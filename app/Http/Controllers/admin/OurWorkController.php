@@ -47,8 +47,6 @@ class OurWorkController extends Controller
 
         $works = OurWork::create($data);
 
-    
-
         return redirect()
         ->route('our-works.index')
         ->with('success', " تم اضافة العمل بنجاح");

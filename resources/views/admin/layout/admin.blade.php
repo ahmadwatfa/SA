@@ -129,8 +129,8 @@
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> قائمة الأعمال </a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> إضافة عمل جديد</a></li>
+                    <li><a href="{{route('our-works.index')}}"><i class="fa fa-circle-o"></i> قائمة الأعمال </a></li>
+                    <li><a href="{{route('our-works.create')}}"><i class="fa fa-circle-o"></i> إضافة عمل جديد</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -162,8 +162,8 @@
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> قائمة الشركاء </a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> إضافة شريك جديد</a></li>
+                    <li><a href="{{route('clients.index')}}"><i class="fa fa-circle-o"></i> قائمة الشركاء </a></li>
+                    <li><a href="{{route('clients.create')}}"><i class="fa fa-circle-o"></i> إضافة شريك جديد</a></li>
                 </ul>
             </li> 
              <li class="treeview">
@@ -173,8 +173,8 @@
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> قائمة الآراء </a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> إضافة رأي جديد</a></li>
+                    <li><a href="{{route('review.index')}}"><i class="fa fa-circle-o"></i> قائمة الآراء </a></li>
+                    <li><a href="{{route('review.create')}}"><i class="fa fa-circle-o"></i> إضافة رأي جديد</a></li>
                 </ul>
             </li> 
 
@@ -185,8 +185,8 @@
                     <i class="fa fa-angle-left pull-left"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i> قائمة التدوينات </a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i> إضافة تدوينة جديدة</a></li>
+                    <li><a href="{{route('blog.index')}}"><i class="fa fa-circle-o"></i> قائمة التدوينات </a></li>
+                    <li><a href="{{route('blog.create')}}"><i class="fa fa-circle-o"></i> إضافة تدوينة جديدة</a></li>
                 </ul>
             </li> 
 

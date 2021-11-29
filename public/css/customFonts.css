@@ -1,0 +1,207 @@
+.font-14 {
+  font-size: 14px;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-21 {
+  font-size: 21px;
+}
+
+.font-22 {
+  font-size: 22px;
+}
+
+.font-25 {
+  font-size: 25px;
+}
+
+.font-35 {
+  font-size: 35px;
+}
+
+.font-55 {
+  font-size: 55px;
+}
+
+@media (max-width: 1399.98px) {
+
+  .font-22 {
+    font-size: 21px;
+  }
+
+  .font-25 {
+    font-size: 22px;
+  }
+
+  .font-35 {
+    font-size: 30px;
+  }
+
+  .font-55 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+
+.font-18
+{
+  font-size: 16px;
+}
+.font-20
+{
+  font-size: 18px;
+}
+.font-21
+{
+  font-size: 19px;
+}
+.font-22
+{
+  font-size: 20px;
+}
+.font-25
+{
+  font-size: 22px;
+}
+.font-35
+{
+  font-size: 25px;
+}
+
+.font-55
+{
+  font-size: 45px;
+}
+}
+
+@media (max-width: 991.98px) {
+  .font-14
+{
+  font-size: 13px;
+}
+.font-15
+{
+  font-size: 14px;
+}
+.font-18
+{
+  font-size: 15px;
+}
+.font-20
+{
+  font-size: 16px;
+}
+.font-21
+{
+  font-size: 18px;
+}
+.font-22
+{
+  font-size: 19px;
+}
+.font-25
+{
+  font-size: 20px;
+}
+.font-35
+{
+  font-size: 24px;
+}
+
+.font-55
+{
+  font-size: 40px;
+}
+}
+
+@media (max-width: 767.98px) {
+  .font-14
+  {
+    font-size: 12px;
+  }
+  .font-15
+  {
+    font-size: 13px;
+  }
+  .font-18
+  {
+    font-size: 14px;
+  }
+  .font-20
+  {
+    font-size: 15px;
+  }
+  .font-21
+  {
+    font-size: 17px;
+  }
+  .font-22
+  {
+    font-size: 18px;
+  }
+  .font-25
+  {
+    font-size: 19px;
+  }
+  .font-35
+  {
+    font-size: 22px;
+  }
+  
+  .font-55
+  {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .font-14
+  {
+    font-size: 11px;
+  }
+  .font-15
+  {
+    font-size: 12px;
+  }
+  .font-18
+  {
+    font-size: 13px;
+  }
+  .font-20
+  {
+    font-size: 14px;
+  }
+  .font-21
+  {
+    font-size: 15px;
+  }
+  .font-22
+  {
+    font-size: 16px;
+  }
+  .font-25
+  {
+    font-size: 18px;
+  }
+  .font-35
+  {
+    font-size: 20px;
+  }
+  
+  .font-55
+  {
+    font-size: 30px;
+  }
+}

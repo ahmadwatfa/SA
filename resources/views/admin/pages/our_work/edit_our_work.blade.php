@@ -37,12 +37,26 @@
                                                 <div class="col-md-8">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="col-sm-3 control-label">اسم العمل :</label>
+                                                            <label class="col-sm-3 control-label">اسم العمل بالعربية :</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="name"
-                                                                    value="{{ old('name' , $work->name) }}" placeholder=""
+                                                                <input type="text" class="form-control" name="name_ar"
+                                                                    value="{{ old('name_ar' , $work->name_ar) }}" placeholder=""
                                                                     data-fv-field="">
-                                                                @error('name')
+                                                                @error('name_ar')
+                                                                    <p class="text-danger">{{ $message }}</p>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">اسم العمل بالانجليزية :</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" name="name_en"
+                                                                    value="{{ old('name_en' , $work->name_en) }}" placeholder=""
+                                                                    data-fv-field="">
+                                                                @error('name_en')
                                                                     <p class="text-danger">{{ $message }}</p>
                                                                 @enderror
                                                             </div>

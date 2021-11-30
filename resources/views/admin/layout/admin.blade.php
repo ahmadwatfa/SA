@@ -189,6 +189,17 @@
                     <li><a href="{{route('blog.create')}}"><i class="fa fa-circle-o"></i> إضافة تدوينة جديدة</a></li>
                 </ul>
             </li> 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>تواصل اجتماعي</span>
+                    <i class="fa fa-angle-left pull-left"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('social.index')}}"><i class="fa fa-circle-o"></i> قائمة الروابط </a></li>
+                    <li><a href="{{route('social.create')}}"><i class="fa fa-circle-o"></i> إضافة روابط جديدة</a></li>
+                </ul>
+            </li> 
 
             {{-- if($this->session->userdata('role')==1){ --}}
             

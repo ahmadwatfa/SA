@@ -12,29 +12,31 @@
 
 
   <!-- bootstrap -->
-  <link href="../css/bootstrap.css" rel="stylesheet" />
-  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./css/bootstrap.css" rel="stylesheet" />
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- custom file -->
 
-  <link href="../css/customFonts.css" rel="stylesheet" />
-  <link href="../css/main.css" rel="stylesheet" />
-  <link href="../css/media.css" rel="stylesheet" />
-  <link href="../css/bootstrap-rtl.min.css" rel="stylesheet"/>
+  <link href="./css/customFonts.css" rel="stylesheet" />
+  <link href="./css/main.css" rel="stylesheet" />
+  <link href="./css/media.css" rel="stylesheet" />
 
-
+  @if (app()->getLocale() == 'ar')
+  <link href="../css/bootstrap-rtl.min.css" rel="stylesheet"/> 
+  @endif
 
 </head>
 
 <body>
   <!-- start header -->
+  @ar
   <header class="header">
     <div class="first-header">
       <div class="container h-100">
         <div class="row align-items-center h-100">
           <div class="col-12 col-lg-4 h-100">
             <ul class="ul-social-links d-flex flex-wrap align-items-center m-0 p-0 h-100">
-              <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="social-link-item"><a href="www.facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
               <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
               <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-skype"></i></a></li>
               <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
@@ -42,12 +44,12 @@
           </div>
           <div class="col-12 col-lg-4">
             <p class="d-none d-lg-flex flex-wrap align-items-center text m-0">
-              <span class="hr"></span>Let us grow your website traffic.</p>
+              <span class="hr"></span>ترجمة للعربي </p>
           </div>
           <div class="col-12 col-lg-4 h-100">
             <ul class="p-0 mb-3 mb-md-0 d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end h-100">
               <li class="select-item h-100 d-flex align-items-center px-4">
-                Cell: <a href="#">0123456789</a></li>
+                Cell: <a href="#"></a></li>
               <li class="select-item h-100 d-flex align-items-center">
                 <select class="form-select h-100">
                   <option value="en">English</option>
@@ -59,6 +61,40 @@
         </div>
       </div>
     </div>
+    @else
+    <header class="header">
+      <div class="first-header">
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+            <div class="col-12 col-lg-4 h-100">
+              <ul class="ul-social-links d-flex flex-wrap align-items-center m-0 p-0 h-100">
+                <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
+                <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-skype"></i></a></li>
+                <li class="social-link-item"><a href="#" class="social-link"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-4">
+              <p class="d-none d-lg-flex flex-wrap align-items-center text m-0">
+                <span class="hr"></span>Let us grow your website traffic.</p>
+            </div>
+            <div class="col-12 col-lg-4 h-100">
+              <ul class="p-0 mb-3 mb-md-0 d-flex flex-wrap align-items-center justify-content-start justify-content-lg-end h-100">
+                <li class="select-item h-100 d-flex align-items-center px-4">
+                  Cell: <a href="#">0123456789</a></li>
+                <li class="select-item h-100 d-flex align-items-center">
+                  <select class="form-select h-100">
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    @endar
+    @ar
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="#"><img alt="img" src="./images/logo.png" style="margin-right: 20px;" /></a>
@@ -72,7 +108,7 @@
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-menu">
             <li class="nav-item">
-              <a class="nav-link font-15 active" aria-current="page" href="#">Home</a>
+              <a class="nav-link font-15 active" aria-current="page" href="#">الرئيسية</a>
             </li>
             <li class="nav-item">
               <a class="nav-link font-15" aria-current="page" href="#">About</a>
@@ -97,8 +133,18 @@
         </div>
       </div>
     </nav>
+    @endar
   </header>
+  {{-- @php
+      $e = app()->getLocale();
+  @endphp
 
+  {{$about['title_' . $e]}} --}}
+  @ar
+  {{ "اهلا"  }}
+  @else
+  {{$about->title_en}}
+  @endar 
   <!-- End Header -->
 
   <!-- faq section -->

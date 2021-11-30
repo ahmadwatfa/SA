@@ -51,6 +51,7 @@
                                                         </div>
             
                                                     </div>
+
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label class="col-sm-3 control-label">الفيديو :</label>
@@ -58,11 +59,11 @@
                                                         <div class="file-upload">
                                                             <button class="file-upload-btn" type="button"
                                                                 onclick="$('.file-upload-input').trigger( 'click' )">إضافة
-                                                                صورة</button>
+                                                                فيديو</button>
     
                                                             <div class="image-upload-wrap">
-                                                                <input class="file-upload-input" type='file' name="image"
-                                                                    onchange="readURL(this);" accept="image/*" />
+                                                                <input class="file-upload-input" type='file' name="video"
+                                                                    onchange="readURL(this);" accept="video/*" />
                                                                     @if($videos->video)<img src="{{ asset('storage/' . $videos->video) }}" width="100%">@endif
                                                                     @error('image')
                                                                     <p class="text-danger">{{ $message }}</p>
@@ -83,7 +84,7 @@
                                                         </div>
                                                         </div>
                                                         </div>
-                                                    </div>
+                                                    </div>                                                
                                             
                                                 </div>
 

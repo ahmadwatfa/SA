@@ -2,53 +2,56 @@
 
 
 @section('main')
-            </aside>
-                <!-- Content Wrapper. Contains page content -->
-                <div class="content-wrapper">
-                    <!-- Content Header (Page header) -->
-                    <section class="content-header">
+    </aside>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
 
-                        <ol class="breadcrumb">
-                            <li><a href="admin"><i class="fa fa-home"></i> الرئيسية</a></li>
-                            <li class="active">قائمة المدونة</li>
-                        </ol>
-                    </section>
+            <ol class="breadcrumb">
+                <li><a href="admin"><i class="fa fa-home"></i> الرئيسية</a></li>
+                <li class="active">قائمة الأنشطة</li>
+            </ol>
+        </section>
 
-                    <!-- Main content -->
-                    <section class="content">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                {{-- <div id="delete-success-div" class="alert alert-danger d-none">
+                    تم حذف النشاط من قائمة الأنشطة
+                </div> --}}
+                <div class="col-xs-12">
+                    @if (session()->has('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session()->has('delete'))
+                        <div class="alert alert-danger">
+                            {{ session('delete') }}
+                        </div>
+                    @endif
+                    @if (session()->has('update'))
+                        <div class="alert alert-success">
+                            {{ session('update') }}
+                        </div>
+                    @endif
+                    <div class="row">
+                        <div class="col-xs-12">
 
-                        <div class="row">
-                            <div class="col-xs-12">
-                                @if (session()->has('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
-                                @if (session()->has('update'))
-                                <div class="alert alert-success">
-                                    {{ session('update') }}
-                                </div>
-                            @endif
-                            @if (session()->has('delete'))
-                                <div class="alert alert-danger">
-                                    {{ session('delete') }}
-                                </div>
-                            @endif
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="box-header with-border">
-                                        <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة المدونة </h3>
-                                        <a href="{{ route('blog.create') }}" class="btn btn-primary pull-left"><i
-                                                class="fa fa-plus"></i> إضافة مدونة جديد </a>
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"> <i class="fa fa-laptop"></i> قائمة التدوينات  </h3>
+                                    <a href="{{route('blog.create')}}" class="btn btn-primary pull-left"><i
+                                            class="fa fa-plus"></i> إضافة تدوينة جديدة </a>
 
-                                    </div><!-- /.box-header -->
-                                    <div class="box-body">
-                                        <table id="example1" class="table table-bordered table-striped">
-                                            <thead>
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
 
-
-
-                                                <tr>
+                                            <tr>
                                                     <th>رقم </th>
 
                                                     <th>العنوان_عربي </th>
@@ -58,6 +61,7 @@
                                                     <th>الصورة </th>
                                                     <th>العمليات</th>
                                                 </tr>
+                                            </tr>
                                             </thead>
                                             <tbody id="tbody-act">
                                                 @php

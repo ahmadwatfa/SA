@@ -60,7 +60,7 @@ class BlogController extends Controller
        $blog->discription_en = $request->discription_en;
 
     if($request->file('image')){
-        $file = $request ->file('image');
+        $file = $request->file('image');
         $filename = date('Ymdhi').$file->getClientOriginalName();
         $file->move(public_path('upload/blog_image'),$filename);
         $blog['image'] = $filename;
